@@ -1,22 +1,42 @@
 import { useState } from "react";
 
 const MiInput = ({ borderColor }) => {
+    /* Estados: escribiendo y borrando */ /* Clase 04 */
     const [inputText, setInputText] = useState("");
+    const [animacion, setAnimacion] = useState(borderColor); /* Clase 04 */
 
     const handleInputOnChange = (eve) => {
         setInputText(eve.target.value);
     }
 
+    const handleAnimacion = () => { /* Clase 04 */
+        console.log("dentro del handler")
+        setAnimacion("border-yellow-300")
+    }
+
+    const handleClearColor = () => { /* Clase 04 */
+        setAnimacion(borderColor)
+    }
+    
     return (
         <>
 
             <h1 className="my-5">{inputText}</h1>
             <div className="flex items-center justify-center bg-white">
 
-                <div className={`flex w-full mx-7 lg:max-w-[500px] rounded-full border-gray-400 border-opacity-65 border ${borderColor} px-2`}>
+                <div className={`flex w-full mx-7 lg:max-w-[500px] rounded-full border-gray-400 border-opacity-65 border ${animacion} px-2`}> {/* Clase 04 */}
 
 
-                    <input type="text" value={inputText} onChange={handleInputOnChange} className="flex w-full  bg-transparent px-3 text-gray-700 rtl:text-right outline-0" placeholder="Search name movie or select options" />
+                    <input
+                        /* Hola mundo */ /* Clase 04 */
+                        type="text"
+                        value={inputText}
+                        onChange={handleInputOnChange}
+                        onFocus={handleAnimacion}
+                        onBlur={handleClearColor}
+                        className="flex w-full  bg-transparent px-3 text-gray-700 rtl:text-right outline-0"
+                        placeholder="Search name movie or select options"
+                    />
 
                     <div className="border-gray-400 border-opacity-70 my-1 border-l "></div>
 

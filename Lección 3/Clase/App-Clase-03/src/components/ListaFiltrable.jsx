@@ -16,12 +16,12 @@ export function ListaFiltrable() {
             }, 2000);
         } else {
             setTimeout(() => {
-                const inicial = ["Manzana", "Banana", "Cereza", "Mora"];
+                const inicial = ["Manzana", "Banana", "Cereza", "Mora"]; /* Si no existe información, damos el estado inicial */
                 setItems(inicial);
-                localStorage.setItem("frutas", JSON.stringify(inicial));
+                localStorage.setItem("frutas", JSON.stringify(inicial)); /* y lo guardamos en localStorage. */
             }, 2000);
         }
-    }, []);
+    }, []); /* Cargar información dentro de los items */
 
     // Persistir en localStorage al cambiar items, pero saltando la primera vez
     useEffect(() => {
@@ -32,7 +32,7 @@ export function ListaFiltrable() {
         localStorage.setItem("frutas", JSON.stringify(items));
     }, [items, primeraCarga]);
 
-    // Memoizar listado filtrado
+    // Memorizar listado filtrado
     const itemsFiltrados = useMemo(
         () =>
             items.filter((i) =>
