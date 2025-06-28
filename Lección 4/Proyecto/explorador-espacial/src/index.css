@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+/* Referencia de colores para FondoEspacial.jsx
+  body {
+  margin: 0;
+  background: linear-gradient(to bottom, #001F3F, #3C8DBC, #001F3F);
+  background: linear-gradient(to bottom, #000017, #004d99, #000017); azul oscuro → claro → oscuro
+  min-height: 100vh;
+  font-family: sans-serif;
+} */
+
+body{
+  color: aqua;
+}
