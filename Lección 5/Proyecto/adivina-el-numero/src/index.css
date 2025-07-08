@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+body, #root {
+  min-height: 100vh; /* Altura mínima pantalla completa */
+  background-color: #bfdbfe; /* color similar a bg-blue-100 de Tailwind */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* similar a p-4 */
+  margin: 0; /* eliminar margen por defecto */
+  font-family: 'Poppins', sans-serif; /* si ya importaste Poppins */
+}
